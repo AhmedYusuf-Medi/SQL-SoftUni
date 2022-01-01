@@ -1,0 +1,38 @@
+--Task 5
+CREATE TABLE
+[Item Type]
+(
+[Item Type Id] INT PRIMARY KEY IDENTITY,
+[Type Name] VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE
+Items
+(
+[Item Id] INT PRIMARY KEY IDENTITY,
+[Item Name] VARCHAR(50) NOT NULL,
+[Item Type Id] INT FOREIGN KEY REFERENCES [Item Type]([Item Type Id])
+)
+
+CREATE TABLE
+[Order Items]
+(
+[Order Id] INT PRIMARY KEY IDENTITY,
+[Item Id] INT FOREIGN KEY REFERENCES Items([Item Id])
+)
+
+CREATE TABLE
+Cities
+(
+[City Id] INT PRIMARY KEY IDENTITY,
+[City Name] VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE 
+Customers
+(
+[Customer Id] INT PRIMARY KEY IDENTITY,
+[Customer Name] VARCHAR(50) NOT NULL,
+Birthday DATE,
+[City Id] INT FOREIGN KEY REFERENCES Cities([City Id])
+)

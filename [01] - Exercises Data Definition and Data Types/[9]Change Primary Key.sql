@@ -1,0 +1,5 @@
+--Task 9
+ALTER TABLE Users DROP CONSTRAINT PK_Users;
+
+ALTER TABLE Users
+ADD CONSTRAINT PK_Users PRIMARY KEY([User Id], [User Name]);

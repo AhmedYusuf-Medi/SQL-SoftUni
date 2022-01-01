@@ -1,0 +1,24 @@
+--Task 5
+CREATE FUNCTION ufn_GetSalaryLevel
+(
+@salary MONEY
+)
+RETURNS VARCHAR(7)
+BEGIN
+IF(@salary IS NULL)
+BEGIN
+RETURN NULL;
+END;
+IF(@salary < 30000)
+BEGIN
+RETURN 'Low';
+END;
+ELSE
+BEGIN
+IF(@salary <= 50000)
+BEGIN
+RETURN 'Average';
+END;
+END;
+RETURN 'High';
+END;
